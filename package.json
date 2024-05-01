@@ -1,0 +1,82 @@
+{
+  "name": "iet",
+  "displayName": "iet",
+  "description": "intranet easy talk",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "iet",
+					"title": "iet",
+					"icon": "resources/sidebar.png"
+				}
+			]
+		},
+		"views": {
+			"iet": [
+				{
+					"id": "iet.bar",
+					"name": "",
+					"type": "webview"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "iet.back",
+				"title": "Back",
+				"icon":
+				{
+					"dark": "resources/back.svg",
+					"light": "resources/back.svg"
+				}
+			},
+			{
+				"command": "iet.add",
+				"title": "Add",
+				"icon":
+				{
+					"dark": "resources/chat-add.svg",
+					"light": "resources/chat-add.svg"
+				}
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "iet.back",
+					"when": "view == iet.bar",
+					"group": "navigation@1"
+				},
+				{
+					"command": "iet.add",
+					"when": "view == iet.bar",
+					"group": "navigation@2"
+				}
+			]
+		}
+	},
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
