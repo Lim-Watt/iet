@@ -12,6 +12,8 @@ const bar = require('./front/bar');
  */
 function activate(context) {
 	
+	console.log('Congratulations, your extension "iet" is now active!');
+	
 	// 注册侧边栏视图
 	class DependenciesProvider {
 		constructor(context)
