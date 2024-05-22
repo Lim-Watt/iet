@@ -1,0 +1,236 @@
+/* 黑色主题 */
+
+:root {
+	--bg-color: #222;
+	--text-color: #d1d1d1;
+	--oext-color: #919191;
+	--box-color: #37373d;
+	--box-hover-color: #7f7f92;
+	--border-color: #333;
+	
+	--font-family: Arial, sans-serif;
+	--font-size: 16px;
+	--line-height: 1.5;
+	--font-weight: 400;
+	--letter-spacing: 0;
+	--text-align: left;
+	--text-transform: none;
+	--word-spacing: 0;
+	--opacity: 1;
+	--z-index: 1;
+	--transition: all 0.3s ease;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	font-weight: var(--font-weight);
+	letter-spacing: var(--letter-spacing);
+	text-align: var(--text-align);
+	text-transform: var(--text-transform);
+	word-spacing: var(--word-spacing);
+	opacity: var(--opacity);
+	z-index: var(--z-index);
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/**                        加载界面                        */
+
+.loading-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #00000067;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-icon-out {
+	height: 50px;
+	width: 5px;
+	border: 5px solid transparent;
+	border-top-color: #888;
+	border-bottom-color: #888;
+	position: relative;
+	-webkit-animation: spin 3s linear infinite;
+	animation: spin 3s linear infinite;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-icon-in {
+	height: 80px;
+	width: 5px;
+	position: fixed;
+	animation: spinBack 1s linear infinite;
+}
+
+.loading-icon-in::before{
+	content: "";
+	position: absolute;
+	top: 60px;
+	right: 3px;
+	bottom: 3px;
+	left: 3px;
+	border: 3px solid transparent;
+	border-top-color: #ddd;
+	border-bottom-color: #ddd;
+	border-radius: 50%;
+	-webkit-animation: sqin 1.5s linear infinite;
+	animation: spinBack 1s linear infinite;
+}
+
+/**                         头部                         */
+
+.header {
+	background-color: #4d4d4de3;
+	color: var(--text-color);
+	padding: 10px;
+	display: flex;
+	height: 40px;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+}
+
+.header h1 {
+	font-size: 24px;
+	font-weight: 500;
+	margin: 0;
+}
+
+/**                       用户列表                       */
+
+#root {
+	height: 100%;
+	width: 100%;
+}
+
+#main {
+	margin-top: 70px;
+	padding: 0px;
+}
+
+.user-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px;
+}
+
+.user-item {
+	width: 100%;
+	margin: 10px;
+	background-color: var(--box-color);
+	box-shadow: 0 0 15px rgba(117, 165, 255, 0.658);
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	align-items: center;
+	justify-content: center;
+}
+
+.left{
+	width: 80%;
+	padding: 0px;
+	align-items: center;
+	justify-content: center;
+}
+
+.left h3 {
+	margin: 00 0;
+	font-size: 18px;
+	font-weight: 500;
+	color: #bdbdbd;
+}
+
+.left p {
+	margin: 0;
+	font-size: 14px;
+	color: #666;
+}
+
+.right {
+	position: absolute;
+	right: 10px;
+	display: flex;
+	top: calc(50% - 12px);
+}
+
+.user-item:hover {
+	background-color: var(--box-hover-color);
+}
+
+.user-item:hover h3 {
+	color: #3b3b3b;
+}
+
+.user-item:hover p {
+	color: #4d4d4d;
+	font-weight: 400;
+}
+
+.right svg:hover {
+	animation: spin 0.5s linear;
+}
+
+/**                        滚动条                      */
+
+
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(137, 81, 234, .99);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #5e72e4;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 10px;
+	background-color: rgba(0, 0, 0, .12);
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #666;
+}
+
+/**                        动画                        */
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinBack {
+	0% {
+		transform: rotate(0deg);
+	}
+	
+	100% {
+		transform: rotate(-720deg);
+	}
+}
