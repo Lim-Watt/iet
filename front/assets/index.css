@@ -147,27 +147,27 @@ body {
 	justify-content: center;
 }
 
-.left{
+.user-item-left{
 	width: 80%;
 	padding: 0px;
 	align-items: center;
 	justify-content: center;
 }
 
-.left h3 {
+.user-item-left h3 {
 	margin: 00 0;
 	font-size: 18px;
 	font-weight: 500;
 	color: #bdbdbd;
 }
 
-.left p {
+.user-item-left p {
 	margin: 0;
 	font-size: 14px;
 	color: #666;
 }
 
-.right {
+.user-item-right {
 	position: absolute;
 	right: 10px;
 	display: flex;
@@ -187,7 +187,7 @@ body {
 	font-weight: 400;
 }
 
-.right svg:hover {
+.user-item-right svg:hover {
 	animation: spin 0.5s linear;
 }
 
