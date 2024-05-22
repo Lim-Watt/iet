@@ -66,7 +66,7 @@ userList.id = 'main';
 userList.innerHTML = `
 	<div class="user-list">
 		${userlist.map(user => `
-		<div class="user-item">
+		<div class="user-item" id="${user.ip}">
 			<div class="user-item-left">
 				<h3 class="name">
 					${user.name}
