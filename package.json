@@ -1,19 +1,19 @@
 {
-  "name": "iet",
-  "displayName": "iet",
-  "description": "intranet easy talk",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.88.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "./extension.js",
-  "contributes": {
+	"name": "iet",
+	"displayName": "iet",
+	"description": "intranet easy talk",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.88.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./extension.js",
+	"contributes": {
 		"viewsContainers": {
 			"activitybar": [
 				{
@@ -36,8 +36,7 @@
 			{
 				"command": "iet.back",
 				"title": "Back",
-				"icon":
-				{
+				"icon": {
 					"dark": "resources/back.svg",
 					"light": "resources/back.svg"
 				}
@@ -45,8 +44,7 @@
 			{
 				"command": "iet.add",
 				"title": "Add",
-				"icon":
-				{
+				"icon": {
 					"dark": "resources/chat-add.svg",
 					"light": "resources/chat-add.svg"
 				}
@@ -65,20 +63,33 @@
 					"group": "navigation@2"
 				}
 			]
+		},
+		"configuration": {
+			"title": "iet",
+			"properties": {
+				"iet.UserName": {
+					"type": "string",
+					"default": "无名氏",
+					"description": "用户名"
+				}
+			}
 		}
 	},
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.88.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "eslint": "^8.57.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
-  }
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.6",
+		"@types/node": "18.x",
+		"@types/vscode": "^1.88.0",
+		"@vscode/test-cli": "^0.0.8",
+		"@vscode/test-electron": "^2.3.9",
+		"eslint": "^8.57.0",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"js-yaml": "^4.1.0"
+	}
 }
